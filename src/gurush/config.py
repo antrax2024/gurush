@@ -1,13 +1,3 @@
-# - This is a Python 3.13 application
-# - Enforce static typing (type hints) in all functions
-# - Enable rich terminal output using `rich`
-# - Manage Python dependencies and builds with `uv`
-# - Adhere to PEP8 code style standards
-# - Maintain English-only documentation and code comments
-# - Apply camelCase convention for variables, methods and functions
-# **Note**: While camelCase conflicts with PEP8's snake_case recommendation for Python,
-# this requirement takes precedence per project specifications
-
 import os
 import shutil
 from typing import Any
@@ -17,7 +7,7 @@ import importlib.resources
 from rich.console import Console
 from gurush.kernel import answerGuru
 from pydantic import HttpUrl
-from term_image.image import from_file
+from term_image.image import BaseImage, from_file
 
 cl = Console()
 
@@ -36,7 +26,7 @@ def printMascot() -> None:
     mascotFile = importlib.resources.files(anchor=f"{APP_NAME}").joinpath(
         "assets/mascot.png"
     )
-    image = from_file(mascotFile, width=40)  # pyright: ignore
+    image: BaseImage = from_file(filepath=mascotFile, width=80)
     print(image)
 
 

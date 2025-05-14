@@ -1,6 +1,6 @@
 [project]
 name = "gurush"
-version = "0.1.5"
+version = "0.1.6"
 description = "Linux Shell AI Agent."
 readme = "README.md"
 license = { text = "MIT" }

@@ -20,6 +20,8 @@ _A command-line AI assistant powered by LangChain._
 
 **gurush** is a terminal application that allows you to interact with **AI language models** through a simple command-line interface. Ask questions and receive answers formatted with rich markdown.
 
+The name "gurush" combines "guru" (the oracle of wisdom) and "sh" (for shell), creating a digital wisdom oracle right in your terminal! 🧙 It's like having a wise mountain sage who lives in your command line, ready to share knowledge without requiring a trek to a distant peak.
+
 ## ✨ Features
 
 - 🧠 AI-powered responses using any OpenAI compatible API
