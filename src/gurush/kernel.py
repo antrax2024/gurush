@@ -10,7 +10,6 @@ from langchain.prompts import HumanMessagePromptTemplate
 from rich.console import Console
 from rich.markdown import Markdown
 from pydantic import HttpUrl
-from typing import List, Optional
 
 cl = Console()
 
@@ -70,7 +69,9 @@ def answerGuru(
     base_url: HttpUrl, api_key: str, model: str, system_template: str, code_theme: str
 ) -> None:
     try:
-        answer = inquirer.text(message="What is your question?", multiline=True).execute()  # type: ignore
+        answer = inquirer.text(  # pyright: ignore
+            message="What is your question?", multiline=True
+        ).execute()  # type: ignore
     except KeyboardInterrupt:
         cl.print("\n[bold red]Exiting program.[/bold red]")
         sys.exit(0)
@@ -78,7 +79,7 @@ def answerGuru(
     # Configuração do modelo de chat
     chat_model = ChatOpenAI(
         base_url=str(base_url),
-        openai_api_key=api_key,
+        openai_api_key=api_key,  # pyright: ignore
         model=model,
         temperature=0.9,
     )
@@ -97,6 +98,6 @@ def answerGuru(
             chain = prompt | chat_model
             response = chain.invoke({"inputText": answer})
             # Split the response into lines and print with delay
-            printWithDelay(response.content, code_theme=code_theme)
+            printWithDelay(response.content, code_theme=code_theme)  # pyright: ignore
     except Exception as e:
         cl.print(f"\n[bold red]Error: {e}[/bold red]")
