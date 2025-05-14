@@ -93,7 +93,7 @@ def answerGuru(
     )
 
     try:
-        with cl.status("[bold green]Wait, the Guru is thinking...[/bold green]"):
+        with cl.status("[bold green]Wait, gurush is thinking...[/bold green]"):
             chain = prompt | chat_model
             response = chain.invoke({"inputText": answer})
             # Split the response into lines and print with delay
