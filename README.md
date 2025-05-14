@@ -7,7 +7,6 @@
 <div align="center">
   <span>
     <img alt="PyPI - Version" src="https://img.shields.io/pypi/v/gurush">
-    <img alt="AUR Version" src="https://img.shields.io/aur/version/gurush">
     <img alt="Python Version from PEP 621 TOML" src="https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Fantrax2024%2Fgurush%2Frefs%2Fheads%2Fmain%2Fpyproject.toml">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/antrax2024/gurush">
     <img alt="GitHub License" src="https://img.shields.io/github/license/antrax2024/gurush">
