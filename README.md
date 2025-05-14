@@ -21,12 +21,14 @@ _A command-line AI assistant powered by LangChain._
 
 The name "gurush" combines "guru" (the oracle of wisdom) and "sh" (for shell), creating a digital wisdom oracle right in your terminal! 🧙 It's like having a wise mountain sage who lives in your command line, ready to share knowledge without requiring a trek to a distant peak.
 
-## Demostration
+## Demonstration
 
-<video width="640" height="360" controls>
-  <source src="videocast/casting.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<p align="center">
+  <video width="100%" autoplay loop muted playsinline>
+    <source src="https://raw.githubusercontent.com/antrax2024/gurush/refs/heads/main/videocast/casting.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</p>
 
 ## ✨ Features
 
