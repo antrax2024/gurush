@@ -1,0 +1,16 @@
+# Configuration file for the Guru LLM application
+#
+# base_url: The base URL for API requests
+base_url: "https://api-base-url.org"
+# api_key: Authentication key for API access (replace with your actual key)
+api_key: "your-apikey-here"
+# model: The LLM model to use for responses
+model: "llm_model" # anthropic/claude-3.7-sonnet is a good choice :P
+# code_theme: Theme used for code highlighting in responses
+code_theme: "github-dark"
+# system_template: Instructions given to the LLM to define its behavior and response format
+system_template: |
+  You are a senior technical expert who masters everything about Linux and related areas.
+  You must answer the question following these rules:
+  - Be brief and concise;
+  - Write everything formatted in markdown, with well-structured code blocks, use highlighting tags such as bold, italics, underline, in short, make everything elegantly formatted in markdown;
