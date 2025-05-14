@@ -23,12 +23,7 @@ The name "gurush" combines "guru" (the oracle of wisdom) and "sh" (for shell), c
 
 ## Demonstration
 
-<p align="center">
-  <video width="100%" autoplay loop muted playsinline>
-    <source src="https://raw.githubusercontent.com/antrax2024/gurush/refs/heads/main/videocast/casting.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</p>
+https://github.com/antrax2024/gurush/blob/main/videocast/casting.mp4
 
 ## ✨ Features
 
