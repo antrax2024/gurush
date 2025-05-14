@@ -26,7 +26,7 @@ def printMascot() -> None:
     mascotFile = importlib.resources.files(anchor=f"{APP_NAME}").joinpath(
         "assets/mascot.png"
     )
-    image: BaseImage = from_file(filepath=mascotFile, width=80)
+    image: BaseImage = from_file(filepath=mascotFile, width=70, height=25)
     print(image)
 
 
