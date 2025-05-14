@@ -14,15 +14,15 @@
   </span>
 </div>
 
-A command-line AI assistant powered by LangChain and OpenAI's language models.
+_A command-line AI assistant powered by LangChain._
 
 ## 📋 Overview
 
-gurush is a terminal application that allows you to interact with AI language models through a simple command-line interface. Ask questions and receive answers formatted with rich markdown.
+**gurush** is a terminal application that allows you to interact with **AI language models** through a simple command-line interface. Ask questions and receive answers formatted with rich markdown.
 
 ## ✨ Features
 
-- 🧠 AI-powered responses using OpenAI's language models
+- 🧠 AI-powered responses using any OpenAI compatible API
 - 💻 Clean terminal interface with rich formatting
 - 🎨 Customizable code highlighting themes
 - ⚙️ Simple configuration via YAML
@@ -87,7 +87,7 @@ The `code_theme` parameter accepts any Pygments style name. Some popular options
 
 ## 🚀 Usage
 
-It's very simple to use gurush. In the terminal, type gurush and press Enter. Ask any question and
+It's very simple to use **gurush**. In the terminal, type **gurush** and press Enter. Ask any question and
 you will receive a response formatted in markdown.
 Example:
 
@@ -98,6 +98,6 @@ $ gurush
 
 ## 📄 License
 
-gurush is released under the MIT License, which is a permissive open-source license. This means you can use, modify, distribute, and even use the software for commercial purposes, provided you include the original copyright notice and disclaimer in any copies or substantial portions of the software.
+gurush is released under the **MIT License**, which is a permissive open-source license. This means you can use, modify, distribute, and even use the software for commercial purposes, provided you include the original copyright notice and disclaimer in any copies or substantial portions of the software.
 
 For more details, see the [LICENSE](LICENSE) file in the repository.
