@@ -23,7 +23,9 @@ The name "gurush" combines "guru" (the oracle of wisdom) and "sh" (for shell), c
 
 ## Demonstration
 
-<video src='https://youtu.be/Qh36xk6ZdSs' width=180/>
+<div>
+<video src='https://youtu.be/Qh36xk6ZdSs' width=640/>
+</div>
 
 ## ✨ Features
 
