@@ -44,7 +44,7 @@ def answerGuru(
             chain = prompt | chat_model
             response = chain.invoke({"inputText": answer})
             markdown = Markdown(
-                response.content,  # pyright: ignore
+                response.content,
                 code_theme=code_theme,
             )
             cl.print(markdown)
