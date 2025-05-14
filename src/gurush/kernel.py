@@ -27,7 +27,7 @@ def answerGuru(
         base_url=str(base_url),
         openai_api_key=api_key,  # type: ignore
         model=model,
-        max_tokens=200,  # type: ignore
+        # max_tokens=200,  # type: ignore
         temperature=0.9,
     )
 
