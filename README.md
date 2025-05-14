@@ -1,5 +1,3 @@
-<!-- markdownlint-disable -->
-
 # gurush
 
 <p align="center">
@@ -35,19 +33,31 @@ gurush is a terminal application that allows you to interact with AI language mo
 
 ### Using pip
 
-````bash
+```bash
 pip install gurush
 ```
 
-### Configuration Parameters
+### Using uv
+
+```bash
+uv pip install gurush
+```
+
+### Using AUR (Arch Linux)
+
+```bash
+yay -S gurush
+# or
+paru -S gurush
+```
+
+### ⚙️ Configuration Parameters
 
 - **base_url**: Base URL for API requests
 - **api_key**: Authentication key for accessing the AI service
 - **model**: LLM model to use for generating responses
 - **code_theme**: Theme for syntax highlighting in code blocks. Available themes include: "monokai", "github-dark", "one-dark", "solarized-dark", "solarized-light", "dracula", "nord", "gruvbox-dark", "zenburn", etc. (Any Pygments style)
 - **system_template**: Instructions that define the AI assistant's behavior
-
-
 
 Example configuration:
 
@@ -63,7 +73,7 @@ system_template: |
   - Format responses in markdown with proper highlighting
 ```
 
-### Available Code Themes
+### 🎨 Available Code Themes
 
 The `code_theme` parameter accepts any Pygments style name. Some popular options include:
 
@@ -75,7 +85,7 @@ The `code_theme` parameter accepts any Pygments style name. Some popular options
 - `nord` - A blue-tinted minimal theme
 - `gruvbox-dark` - Retro theme with warm colors
 
-## Usage
+## 🚀 Usage
 
 It's very simple to use gurush. In the terminal, type gurush and press Enter. Ask any question and
 you will receive a response formatted in markdown.
@@ -86,9 +96,8 @@ $ gurush
 > How do I check disk usage in Linux?
 ```
 
-## License
+## 📄 License
 
 gurush is released under the MIT License, which is a permissive open-source license. This means you can use, modify, distribute, and even use the software for commercial purposes, provided you include the original copyright notice and disclaimer in any copies or substantial portions of the software.
 
-For more details, see the [LICENSE](LICENSE) file in the repository. 5. Review the formatted markdown output with syntax highlighting. 🚀
-````
+For more details, see the [LICENSE](LICENSE) file in the repository.
