@@ -1,3 +1,5 @@
+<!-- markdownlint-disable -->
+
 # gurush
 
 <p align="center">
@@ -16,55 +18,36 @@
 
 A command-line AI assistant powered by LangChain and OpenAI's language models.
 
-## Overview
+## 📋 Overview
 
 gurush is a terminal application that allows you to interact with AI language models through a simple command-line interface. Ask questions and receive answers formatted with rich markdown.
 
-## Features
+## ✨ Features
 
 - 🧠 AI-powered responses using OpenAI's language models
 - 💻 Clean terminal interface with rich formatting
 - 🎨 Customizable code highlighting themes
 - ⚙️ Simple configuration via YAML
 - 📝 Markdown rendering for responses
-- 📝 Markdown rendering for responses
-- ⚙️ Configurable system prompts
+- 🔧 Configurable system prompts
 
-## Installation
+## 📥 Installation
 
 ### Using pip
 
-```bash
+````bash
 pip install gurush
 ```
 
-### Using uv
-
-```bash
-uv install gurush
-```
-
-### Using AUR (Arch Linux)
-
-```bash
-yay -S gurush
-# or
-paru -S gurush
-```
-
-## Configuration
-
-gurush uses a YAML configuration file to manage its settings. The default configuration is located at `~/.config/gurush/config.yaml`.
-
 ### Configuration Parameters
 
-| Parameter         | Description                                          |
-| ----------------- | ---------------------------------------------------- |
-| `base_url`        | Base URL for API requests                            |
-| `api_key`         | Authentication key for accessing the AI service      |
-| `model`           | LLM model to use for generating responses            |
-| `code_theme`      | Theme for syntax highlighting in code blocks         |
-| `system_template` | Instructions that define the AI assistant's behavior |
+- **base_url**: Base URL for API requests
+- **api_key**: Authentication key for accessing the AI service
+- **model**: LLM model to use for generating responses
+- **code_theme**: Theme for syntax highlighting in code blocks. Available themes include: "monokai", "github-dark", "one-dark", "solarized-dark", "solarized-light", "dracula", "nord", "gruvbox-dark", "zenburn", etc. (Any Pygments style)
+- **system_template**: Instructions that define the AI assistant's behavior
+
+
 
 Example configuration:
 
@@ -80,16 +63,22 @@ system_template: |
   - Format responses in markdown with proper highlighting
 ```
 
+### Available Code Themes
+
+The `code_theme` parameter accepts any Pygments style name. Some popular options include:
+
+- `github-dark` - GitHub's dark theme
+- `monokai` - Vibrant dark theme popular in many editors
+- `one-dark` - Atom editor's dark theme
+- `solarized-dark` and `solarized-light` - Popular color schemes with light/dark variants
+- `dracula` - A dark theme with vibrant colors
+- `nord` - A blue-tinted minimal theme
+- `gruvbox-dark` - Retro theme with warm colors
+
 ## Usage
 
-Using gurush is simple:
-
-1. Open your terminal
-2. Type `gurush` and press Enter to start the application
-3. Ask any technology-related question
-4. Press `ESC+Enter` to submit and get your AI-powered response
-5. Review the formatted markdown output with syntax highlighting
-
+It's very simple to use gurush. In the terminal, type gurush and press Enter. Ask any question and
+you will receive a response formatted in markdown.
 Example:
 
 ```bash
@@ -97,4 +86,9 @@ $ gurush
 > How do I check disk usage in Linux?
 ```
 
-After pressing `ESC+Enter`, you'll receive a nicely formatted response with the requested information.
+## License
+
+gurush is released under the MIT License, which is a permissive open-source license. This means you can use, modify, distribute, and even use the software for commercial purposes, provided you include the original copyright notice and disclaimer in any copies or substantial portions of the software.
+
+For more details, see the [LICENSE](LICENSE) file in the repository. 5. Review the formatted markdown output with syntax highlighting. 🚀
+````
