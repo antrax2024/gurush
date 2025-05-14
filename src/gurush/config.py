@@ -22,7 +22,7 @@ from term_image.image import from_file
 cl = Console()
 
 # control debug mode
-DEBUG = True
+DEBUG = False
 
 
 def printMessage(preamble: str, variable: Any) -> None:

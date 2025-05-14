@@ -25,9 +25,8 @@ def answerGuru(
     # Configuração do modelo de chat
     chat_model = ChatOpenAI(
         base_url=str(base_url),
-        openai_api_key=api_key,  # type: ignore
+        openai_api_key=api_key,
         model=model,
-        # max_tokens=200,  # type: ignore
         temperature=0.9,
     )
 
