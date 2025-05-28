@@ -1,6 +1,6 @@
 [project]
 name = "gurush"
-version = "0.1.18"
+version = "0.2.2"
 description = "Linux Shell AI Agent."
 readme = "README.md"
 license = { text = "MIT" }
@@ -16,12 +16,12 @@ dependencies = [
 ]
 
 [project.urls]
-homepage   = "https://github.com/antrax2024/gurush"
+homepage = "https://github.com/antrax2024/gurush"
 Repository = "https://github.com/antrax2024/gurush"
 
 [project.scripts]
 gurush = "gurush:main"
 
 [build-system]
-requires      = ["hatchling"]
+requires = ["hatchling"]
 build-backend = "hatchling.build"
