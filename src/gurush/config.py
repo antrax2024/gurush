@@ -16,9 +16,6 @@ DEBUG = False
 
 
 def printMessage(preamble: str, variable: Any) -> None:
-    """
-    Print a message to the console with fixed width preamble.
-    """
     cl.print(f"[bold yellow]{preamble:<15}[/bold yellow]: {variable}")
 
 
