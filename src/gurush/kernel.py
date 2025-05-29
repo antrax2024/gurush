@@ -17,14 +17,6 @@ cl = Console()
 def printWithDelay(
     content: str, delay: float = 0.2, code_theme: str = "monokai"
 ) -> None:
-    """
-    Print the markdown content with a delay, preserving code blocks.
-
-    Args:
-        content: The markdown text content to print
-        delay: The delay in seconds between each print operation
-        code_theme: The theme to use for code blocks
-    """
     import re
 
     # Split content into chunks: normal text and code blocks
@@ -32,7 +24,7 @@ def printWithDelay(
     code_block_pattern = r"(```[\s\S]*?```)"
     parts = re.split(code_block_pattern, content)
 
-    for i, part in enumerate(parts):
+    for part in parts:
         # If this is a code block (starts with ```)
         if part.startswith("```"):
             segments.append({"type": "code", "content": part})
@@ -70,7 +62,7 @@ def answerGuru(
 ) -> None:
     try:
         answer = inquirer.text(  # pyright: ignore
-            message="What is your question?", multiline=True
+            message="What is your question?\n"
         ).execute()  # type: ignore
     except KeyboardInterrupt:
         cl.print("\n[bold red]Exiting program.[/bold red]")

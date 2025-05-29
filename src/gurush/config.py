@@ -9,84 +9,96 @@ from gurush.kernel import answerGuru
 from pydantic import HttpUrl
 from term_image.image import BaseImage, from_file
 
-cl = Console()
-
-# control debug mode
+console = Console()
 DEBUG = False
 
 
-def printMessage(preamble: str, variable: Any) -> None:
-    cl.print(f"[bold yellow]{preamble:<15}[/bold yellow]: {variable}")
+def print_message(preamble: str, variable: Any) -> None:
+    """Print formatted key-value pair to console.
+
+    Args:
+        preamble: Display label (left-aligned)
+        variable: Value to display
+    """
+    console.print(f"[bold yellow]{preamble:<15}[/bold yellow]: {variable}")
 
 
-def printMascot() -> None:
-    mascotFile = importlib.resources.files(anchor=f"{APP_NAME}").joinpath(
-        "assets/mascot.png"
-    )
-    image: BaseImage = from_file(filepath=f"{mascotFile}", width=70, height=25)
+def print_mascot() -> None:
+    """Display application mascot using terminal image rendering."""
+    mascot_path = importlib.resources.files(APP_NAME).joinpath("assets/mascot.png")
+    image: BaseImage = from_file(str(mascot_path), width=70, height=25)
     print(image)
 
 
 def cli() -> None:
-    printMascot()
-    cl.print(f"[bold yellow]{APP_NAME} v{APP_VERSION}[/bold yellow]\n")
-    cl.print("[cyan]=[/cyan]" * 80)
-    # Check config file
-    checkFile(file=CONFIG_FILE)
+    """Main CLI entry point handling configuration and execution flow."""
+    print_mascot()
+    console.print(f"[bold yellow]{APP_NAME} v{APP_VERSION}[/bold yellow]\n")
+    console.print("[cyan]=[/cyan]" * 80)
+
+    check_config_file(CONFIG_FILE)
 
     try:
-        appConfig = AppConfig()
+        app_config = AppConfig()
     except Exception as e:
-        cl.print(f"[bold red]ERROR:[/bold red] Invalid configuration: {e}")
+        console.print(f"[bold red]ERROR:[/bold red] Invalid configuration: {e}")
         return
 
     if DEBUG:
-        printMessage(preamble="Base URL", variable=appConfig.base_url)
-        printMessage(preamble="Model", variable=appConfig.model)
-        printMessage(preamble="Code Theme", variable=appConfig.code_theme)
-        cl.print("[cyan]=[/cyan]" * 80)
+        print_message("Base URL", app_config.base_url)
+        print_message("Model", app_config.model)
+        print_message("Code Theme", app_config.code_theme)
+        console.print("[cyan]=[/cyan]" * 80)
 
     answerGuru(
-        base_url=appConfig.base_url,
-        api_key=appConfig.api_key,
-        model=appConfig.model,
-        system_template=appConfig.system_template,
-        code_theme=appConfig.code_theme,
+        base_url=app_config.base_url,
+        api_key=app_config.api_key,
+        model=app_config.model,
+        system_template=app_config.system_template,
+        code_theme=app_config.code_theme,
     )
 
 
-def checkFile(file: str) -> None:
+def check_config_file(config_path: str) -> None:
+    """Ensure configuration file exists, creating it if necessary.
+
+    Args:
+        config_path: Full path to configuration file
+    """
     try:
-        if not os.path.exists(path=file):
-            os.makedirs(name=os.path.dirname(p=file), exist_ok=True)
-            copyFile(destination=file)
-    except FileNotFoundError as e:
-        cl.print(f"Error: {e}")
+        if not os.path.exists(config_path):
+            os.makedirs(os.path.dirname(config_path), exist_ok=True)
+            copy_config_file(config_path)
+    except OSError as e:
+        console.print(f"File system error: {e}")
 
 
-def copyFile(destination) -> None:
-    # Extract only the filename from destination variable
+def copy_config_file(destination: str) -> None:
+    """Copy default config file from package assets.
+
+    Args:
+        destination: Target path for config file
+    """
     filename = os.path.basename(destination)
-
-    source = importlib.resources.files(anchor=f"{APP_NAME}").joinpath(
-        f"assets/{filename}"
-    )
-    # Convert Traversable to string path and copy the file
-    shutil.copy2(
-        src=str(object=source),
-        dst=destination,
-    )
+    source = importlib.resources.files(APP_NAME).joinpath(f"assets/{filename}")
+    shutil.copy2(str(source), destination)
 
 
-# Main configuration class
 class AppConfig(BaseConfig):
-    CONFIG_SOURCES = FileSource(
-        file=os.path.join(
-            os.path.expanduser(path="~"), ".config", f"{APP_NAME}", "config.yaml"
-        )
-    )
+    """Main application configuration powered by confz.
+
+    Attributes:
+        base_url: API endpoint URL
+        api_key: Authentication credential
+        model: LLM model identifier
+        code_theme: Syntax highlighting theme
+        system_template: Base prompt template
+    """
+
+    CONFIG_SOURCES = FileSource(file=CONFIG_FILE)
+
     base_url: HttpUrl
-    api_key: str  # API key for authentication
+    api_key: str
     model: str
     code_theme: str
     system_template: str
