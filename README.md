@@ -1,3 +1,5 @@
+<!-- markdownlint-disable -->
+
 # gurush
 
 <p align="center">
@@ -13,7 +15,7 @@
   </span>
 </div>
 
-_A command-line AI assistant powered by LangChain._
+_A shell command-line AI assistant powered by LangChain._
 
 ## 📋 Overview
 
@@ -23,15 +25,12 @@ The name "gurush" combines "guru" (the oracle of wisdom) and "sh" (for shell), c
 
 ## Demonstration
 
-
-
 https://github.com/user-attachments/assets/cb96185d-32c6-4cf8-8316-321646b36bff
-
-
 
 ## ✨ Features
 
 - 🧠 AI-powered responses using any OpenAI compatible API
+- 🤖 You can use any OpenAI compatible API
 - 💻 Clean terminal interface with rich formatting
 - 🎨 Customizable code highlighting themes
 - ⚙️ Simple configuration via YAML
