@@ -2,7 +2,7 @@
 import os
 
 
-APP_VERSION = "0.2.4"
+APP_VERSION = "0.2.6"
 # This is the name of the application.
 APP_NAME = "gurush"
 

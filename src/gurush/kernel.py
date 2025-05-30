@@ -96,5 +96,8 @@ def answerGuru(
             response = chain.invoke({"inputText": answer})
             # Split the response into lines and print with delay
             printWithDelay(response.content, code_theme=code_theme)  # pyright: ignore
+    except KeyboardInterrupt:
+        cl.print("\n[bold red]Interrupted by user.[/bold red]")
+
     except Exception as e:
         cl.print(f"\n[bold red]Error: {e}[/bold red]")
