@@ -26,37 +26,36 @@ def print_message(preamble: str, variable: Any) -> None:
 def print_mascot() -> None:
     """Display application mascot using terminal image rendering."""
     mascot_path = importlib.resources.files(APP_NAME).joinpath("assets/mascot.png")
-    image: BaseImage = from_file(str(mascot_path), width=70, height=25)
+    image: BaseImage = from_file(str(mascot_path), width=60, height=25)
     print(image)
 
 
 def cli() -> None:
     """Main CLI entry point handling configuration and execution flow."""
     print_mascot()
-    console.print(f"[bold yellow]{APP_NAME} v{APP_VERSION}[/bold yellow]\n")
+    console.print(f"[bold yellow]{APP_NAME} v{APP_VERSION}[/bold yellow]")
     console.print("[cyan]=[/cyan]" * 80)
 
     check_config_file(CONFIG_FILE)
 
     try:
         app_config = AppConfig()
+        if DEBUG:
+            print_message("Base URL", app_config.base_url)
+            print_message("Model", app_config.model)
+            print_message("Code Theme", app_config.code_theme)
+            console.print("[cyan]=[/cyan]" * 80)
+
+        answerGuru(
+            base_url=app_config.base_url,
+            api_key=app_config.api_key,
+            model=app_config.model,
+            system_template=app_config.system_template,
+            code_theme=app_config.code_theme,
+        )
     except Exception as e:
         console.print(f"[bold red]ERROR:[/bold red] Invalid configuration: {e}")
         return
-
-    if DEBUG:
-        print_message("Base URL", app_config.base_url)
-        print_message("Model", app_config.model)
-        print_message("Code Theme", app_config.code_theme)
-        console.print("[cyan]=[/cyan]" * 80)
-
-    answerGuru(
-        base_url=app_config.base_url,
-        api_key=app_config.api_key,
-        model=app_config.model,
-        system_template=app_config.system_template,
-        code_theme=app_config.code_theme,
-    )
 
 
 def check_config_file(config_path: str) -> None:

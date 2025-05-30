@@ -68,6 +68,11 @@ def answerGuru(
         cl.print("\n[bold red]Exiting program.[/bold red]")
         sys.exit(0)
 
+    # if not answer is provided so exit
+    if not answer or answer == "":
+        cl.print("\n[bold red]No answer. Exiting program.[/bold red]")
+        sys.exit(0)
+
     # Configuração do modelo de chat
     chat_model = ChatOpenAI(
         base_url=str(base_url),
