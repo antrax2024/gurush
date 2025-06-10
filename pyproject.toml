@@ -1,6 +1,6 @@
 [project]
 name = "gurush"
-version = "0.2.6"
+version = "0.2.8"
 description = "Linux Shell AI Agent."
 readme = "README.md"
 license = { text = "MIT" }
@@ -12,7 +12,6 @@ dependencies = [
   "langchain>=0.3.25",
   "langchain-openai>=0.3.16",
   "rich>=14.0.0",
-  "term-image>=0.7.2",
 ]
 
 [project.urls]

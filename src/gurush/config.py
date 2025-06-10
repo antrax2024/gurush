@@ -5,7 +5,6 @@ import importlib.resources
 from confz import BaseConfig, FileSource
 from gurush.constants import APP_NAME, APP_VERSION, CONFIG_FILE
 from gurush.kernel import answerGuru
-from term_image.image import BaseImage, from_file
 from rich.console import Console
 from pydantic import HttpUrl
 
@@ -23,18 +22,11 @@ def print_message(preamble: str, variable: Any) -> None:
     console.print(f"[bold yellow]{preamble:<15}[/bold yellow]: {variable}")
 
 
-def print_mascot() -> None:
-    """Display application mascot using terminal image rendering."""
-    mascot_path = importlib.resources.files(APP_NAME).joinpath("assets/mascot.png")
-    image: BaseImage = from_file(str(mascot_path), width=60, height=25)
-    print(image)
-
-
 def cli() -> None:
     """Main CLI entry point handling configuration and execution flow."""
-    print_mascot()
     console.print(f"[bold yellow]{APP_NAME} v{APP_VERSION}[/bold yellow]")
-    console.print("[cyan]=[/cyan]" * 80)
+    width = console.width
+    console.print("[cyan]=[/cyan]" * width)
 
     check_config_file(CONFIG_FILE)
 

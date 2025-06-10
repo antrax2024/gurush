@@ -1,0 +1,26 @@
+// ~/.config/vectorcode/config.json5
+{
+  // "host": "127.0.0.1", // before 0.6.8
+  // "port": 8000, // before 0.6.8
+  "db_url": "http://127.0.0.1:8000", // since 0.6.8
+  "embedding_function": "OllamaEmbeddingFunction",
+  "embedding_params": {
+    "backend": "torch",
+    "device": "cuda",    
+    "url": "http://127.0.0.1:11434/api/embeddings",
+    "model_name": "nomic-embed-text"
+  },
+  // "db_path": "~/.local/share/vectorcode/chromadb/",
+  // "db_log_path": "~/.local/share/vectorcode/",
+  "db_settings": null,
+  "chunk_size": 2500,
+  "overlap_ratio": 0.2,
+  "query_multiplier": -1,
+  "reranker": "CrossEncoderReranker",
+  "reranker_params": {
+    "model_name_or_path": "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  },
+  "hnsw": {},
+  "chunk_filters": {},
+  "encoding": "utf8"
+}
