@@ -2,10 +2,6 @@
 
 # gurush
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/antrax2024/gurush/refs/heads/main/src/gurush/assets/mascot.png" alt="gurush Mascot" />
-</p>
-
 <div align="center">
   <span>
     <img alt="PyPI - Version" src="https://img.shields.io/pypi/v/gurush">
